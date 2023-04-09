@@ -1,16 +1,16 @@
 #include <iostream>
 
-int* BubbleSort(int* array, const int size)
+int* BubbleSort(int*const &array, const int &size) // This means that the pointer itself cannot be modified within the function, but the contents of the array can be modified. 
 {
-	for ( int j = 0; j < size-1; j++ )
+	for ( int i = 0; i < size-1; i++ )
 	{ 
-	    for (int i = 1; i < size; i++)
+	    for (int j = 0; j < size-1-i; j++) // A small optimization. Since we compare each element sequentially with all the elements of the array. That can be noticed when we compare the first element with all the elements
 	    {
-	    	if (array[i - 1] > array[i])
+	    	if (array[i] > array[i+1])
 	    	{
-	    		int temp = array[i - 1];
-	    		array[i - 1] = array[i];
-	    		array[i] = temp;
+	    		int temp = array[i];
+	    		array[i] = array[i+1];
+	    		array[i+1] = temp;
 	    	}
 	    }
 	}
@@ -22,15 +22,10 @@ int main()
 {
 	int size = 0, counter = 0;
 	std::cin >> size;
-	counter = size;
 	int* array = new int[size];
 	for (int i = 0; i < size; i++)
 	{
-		*(array + i) = counter--;
-	}
-	for (int i = 0; i < size; i++)
-	{
-		std::cout << *(array + i) << " ";
+		std::cin >> *(array + i);
 	}
 	std::cout << std::endl;
 	BubbleSort(array, size);
