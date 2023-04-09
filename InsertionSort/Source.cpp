@@ -16,8 +16,8 @@ int* InsertionSort(int* const& array, const int &size)
 
 int main()
 {
-	const int size = 3;
-	int array[size] = { 2, 3, 1};
+	const int size = 1;
+	int array[size] = {1};
 	InsertionSort(array, size);
 	for (int i = 0; i < size; i++)
 	{
