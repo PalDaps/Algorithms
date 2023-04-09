@@ -4,25 +4,20 @@ int* InsertionSort(int* const& array, const int &size)
 {
 	for (int i = 0; i < size - 1; i++)
 	{
-
-		if (array[i + 1] < array[i])
+		for (int j = i; j >= 0 && array[j + 1] < array[j]; j--)
 		{
-			for ( int j = i; j>=0; j-- )
-			{ 
 			int temp = array[j];
-			array[j] = array[j + 1]; 
+			array[j] = array[j + 1];
 			array[j + 1] = temp;
-			}
 		}
-
 	}
 	return array;
 }
 
 int main()
 {
-	const int size = 2;
-	int array[size] = { 5, 4};
+	const int size = 3;
+	int array[size] = { 2, 3, 1};
 	InsertionSort(array, size);
 	for (int i = 0; i < size; i++)
 	{
