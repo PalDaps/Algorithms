@@ -1,8 +1,8 @@
 #include <iostream>
 
-int& BubbleSort(int* &array, const int size)
+int* BubbleSort(int* array, const int size)
 {
-	for ( int j = 0; j < size; j++ )
+	for ( int j = 0; j < size-1; j++ )
 	{ 
 	    for (int i = 1; i < size; i++)
 	    {
@@ -14,19 +14,26 @@ int& BubbleSort(int* &array, const int size)
 	    	}
 	    }
 	}
-	return *array;
+	return array;
 
 }
 
 int main()
 {
-	int size = 0;
+	int size = 0, counter = 0;
 	std::cin >> size;
+	counter = size;
 	int* array = new int[size];
 	for (int i = 0; i < size; i++)
 	{
-		*(array + i) = i+1;
+		*(array + i) = counter--;
 	}
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << *(array + i) << " ";
+	}
+	std::cout << std::endl;
+	BubbleSort(array, size);
 	for (int i = 0; i < size; i++)
 	{
 		std::cout << *(array + i) << " ";
