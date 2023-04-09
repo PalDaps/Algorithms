@@ -4,13 +4,13 @@ int* BubbleSort(int*const &array, const int &size) // This means that the pointe
 {
 	for ( int i = 0; i < size-1; i++ )
 	{ 
-	    for (int j = 0; j < size-1-i; j++) // A small optimization. Since we compare each element sequentially with all the elements of the array. That can be noticed when we compare the first element with all the elements
+	    for (int j = 0; j < size-1-i; j++) // A small optimization. Since we compare each element sequentially with all the elements of the array. Then, you can notice when we compare the first element (at the zero iteration) with all the elements of the array, then the largest element becomes at the end. Consequently, elements can be swapped i times less. Where i is the number of runs through the array.
 	    {
-	    	if (array[i] > array[i+1])
+	    	if (array[j] > array[j+1])
 	    	{
-	    		int temp = array[i];
-	    		array[i] = array[i+1];
-	    		array[i+1] = temp;
+	    		int temp = array[j];
+	    		array[j] = array[j+1];
+	    		array[j+1] = temp;
 	    	}
 	    }
 	}
