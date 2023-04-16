@@ -50,13 +50,17 @@ int* InsertionSort(int* const& array, const int& size)
 	return array;
 }
 
-int& BinarySearch(int* const& sort_array, const int& size, const int &find_value)
+int BinarySearch(int* const& sort_array, const int& size, const int &find_value)
 {
 	int low = 0;
 	int high = size - 1;
 	int middle = (high + low) / 2;
-	while ( find_value != sort_array[middle] )
+	while ( low <= high )
 	{
+		if (find_value == sort_array[middle])
+		{
+
+		}
 		if ( find_value > sort_array[middle] )
 		{
 			low = middle + 1;
@@ -74,13 +78,13 @@ int& BinarySearch(int* const& sort_array, const int& size, const int &find_value
 int main()
 {
 	const int size = 6;
-	int array[size] = { 6, 5, 4, 3, 2, 1};
+	int array[size] = { 6, 5, 4, 4, 2, 1};
 	InsertionSort(array, size);
 	for (int i = 0; i < size; i++)
 	{
 		std::cout << array[i] << " ";
 	}
 	std::cout << std::endl;
-	std::cout << BinarySearch(array, 6, 7);
+	std::cout << BinarySearch(array, 6, 4);
 	return 0;
 }
