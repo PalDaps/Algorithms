@@ -29,6 +29,10 @@ int* LinearSearch(int* const& array, const int& size, const int &find)
 	if (counter > 0)
 	{
 		int* array_of_index_values = new int[counter];
+		for (int i = 0, first_i_index; i < counter; i++, first_i_index++)
+		{
+			array_of_index_values[i] = array[first_i_index];
+		}
 		return array_of_index_values;
 	}
 	else
@@ -48,5 +52,6 @@ int main()
 	InsertionSort(array, size);
 	for (int i = 0; i < size; i++)
 		std::cout << array[i] << " ";
+	LinearSearch(array, size, number);
 	return 0;
 }

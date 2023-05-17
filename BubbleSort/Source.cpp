@@ -1,6 +1,6 @@
 #include <iostream>
 
-int* BubbleSort(int*const &array, const int &size) // This means that the pointer itself cannot be modified within the function, but the contents of the array can be modified. 
+int* BubbleSort(int* const &array, const int &size) // This means that the pointer itself cannot be modified within the function, but the contents of the array can be modified. 
 {
 	for ( int i = 0; i < size-1; i++ )
 	{ 
@@ -20,6 +20,8 @@ int* BubbleSort(int*const &array, const int &size) // This means that the pointe
 
 int main()
 {
+	int h = 0101010101101001;
+	int a = h << 010;
 	int size = 0, counter = 0;
 	std::cin >> size;
 	int* array = new int[size];
@@ -33,7 +35,6 @@ int main()
 	{
 		std::cout << *(array + i) << " ";
 	}
-
 	delete[] array;
 	return 0;
 }
