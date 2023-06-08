@@ -1,5 +1,5 @@
 #include <iostream>
-
+/*
 int* BubbleSort(int* const &array, const int &size) // This means that the pointer itself cannot be modified within the function, but the contents of the array can be modified. 
 {
 	for ( int i = 0; i < size-1; i++ )
@@ -16,6 +16,36 @@ int* BubbleSort(int* const &array, const int &size) // This means that the point
 	}
 	return array;
 
+}
+*/
+
+// after a month
+/*
+int* BubbleSort(int* const& array, const int& size) { // че то я не понял, зачем я так делал?
+	for (int i = 0; i < size - 1; i++) {
+		for (int j = 0; j < size - 1 - i; j++) {
+			if (array[j] > array[j + 1]) {
+				int temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
+			}
+		}
+	}
+	return array;
+}
+*/
+
+// 6/8/2023 Я когда нибудь это запомню или нет?
+int* BubbleSort(int* const& array, const int& size) {
+	for (int i = 0; i < size - 1; i++) {
+		for (int j = 0; j < size - 1 - i; j++) {
+			if (array[j] > array[j + 1]) {
+				int temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
+			}
+		}
+	}
 }
 
 int main()
