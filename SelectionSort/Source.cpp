@@ -1,5 +1,6 @@
 #include <iostream>
 
+/*
 int* SelectionSort(int* const& array, const int& size)
 {
 	for (int j = 0; j < size; j++)
@@ -18,11 +19,29 @@ int* SelectionSort(int* const& array, const int& size)
 	}
 	return array;
 }
+*/
+
+// after a month 6/8/2023
+// заметил, что отладчик позволяет хорошо вспомнить код
+int* SelectionSort(int* const& array, const int& size) {
+	for (int i = 0; i < size; i++) {
+		int safe_min = i;
+		for (int j = i; j < size; j++) {
+			if (array[safe_min] > array[j]) {
+				safe_min = j;
+			}
+		}
+		int temp = array[safe_min];
+		array[safe_min] = array[i];
+		array[i] = temp;
+	}
+	return array;
+}
 
 int main()
 {
-	const int size = 10;
-	int array[size] = {6, 3, 7, 4, 8, 2, 1, 1, 1, 0};
+	const int size = 5;
+	int array[size] = {5, 1, 2, 4, 3};
 	for (int i = 0; i < size; i++)
 	{
 		std::cout << array[i] << " ";
