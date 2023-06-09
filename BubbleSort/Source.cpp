@@ -35,7 +35,8 @@ int* BubbleSort(int* const& array, const int& size) { // че то я не понял, зачем
 }
 */
 
-// 6/8/2023 Я когда нибудь это запомню или нет?
+ //6/8/2023 Я когда нибудь это запомню или нет?
+/*
 int* BubbleSort(int* const& array, const int& size) {
 	for (int i = 0; i < size - 1; i++) {
 		for (int j = 0; j < size - 1 - i; j++) {
@@ -46,6 +47,22 @@ int* BubbleSort(int* const& array, const int& size) {
 			}
 		}
 	}
+}
+*/
+
+//after a day 6/9/2023
+// success
+int* BubbleSort(int* const& array, const int& size) {
+	for (int i = 0; i < size-1; i++) {
+		for (int j = 0; j < size - 1 - i; j++) {
+			if (array[j] > array[j + 1]) {
+				int temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
+			}
+		}
+	}
+	return array;
 }
 
 int main()

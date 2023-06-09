@@ -23,6 +23,7 @@ int* SelectionSort(int* const& array, const int& size)
 
 // after a month 6/8/2023
 // заметил, что отладчик позволяет хорошо вспомнить код
+/*
 int* SelectionSort(int* const& array, const int& size) {
 	for (int i = 0; i < size; i++) {
 		int safe_min = i;
@@ -34,6 +35,23 @@ int* SelectionSort(int* const& array, const int& size) {
 		int temp = array[safe_min];
 		array[safe_min] = array[i];
 		array[i] = temp;
+	}
+	return array;
+}
+*/
+// after a day
+// success
+int* SelectionSort(int* const& array, const int& size) {
+	for (int i = 0; i < size; i++) {
+		int min_index = i;
+		for (int j = i; j < size; j++) {
+			if (array[min_index] > array[j]) {
+				min_index = j;
+			}
+		}
+		int temp = array[i];
+		array[i] = array[min_index];
+		array[min_index] = temp;
 	}
 	return array;
 }
