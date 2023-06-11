@@ -41,6 +41,8 @@ int* SelectionSort(int* const& array, const int& size) {
 */
 // after a day
 // success
+
+/*
 int* SelectionSort(int* const& array, const int& size) {
 	for (int i = 0; i < size; i++) {
 		int min_index = i;
@@ -55,7 +57,19 @@ int* SelectionSort(int* const& array, const int& size) {
 	}
 	return array;
 }
-
+*/
+// 6/11/2023
+// succes
+int* SelectionSort(int* const& array, const int size) {
+	for (int i = 0; i < size; i++) {
+		int min_index = 0;
+		for (int j = i; j < size; i++) {
+			if (array[min_index] > array[j])
+				min_index = j;
+		}
+		std::swap(array[i], array[min_index]);
+	}
+}
 int main()
 {
 	const int size = 5;
