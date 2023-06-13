@@ -62,13 +62,14 @@ int* SelectionSort(int* const& array, const int& size) {
 // succes
 int* SelectionSort(int* const& array, const int size) {
 	for (int i = 0; i < size; i++) {
-		int min_index = 0;
-		for (int j = i; j < size; i++) {
+		int min_index = i;
+		for (int j = i; j < size; j++) {
 			if (array[min_index] > array[j])
 				min_index = j;
 		}
 		std::swap(array[i], array[min_index]);
 	}
+	return array;
 }
 int main()
 {
