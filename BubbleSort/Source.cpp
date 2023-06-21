@@ -52,14 +52,24 @@ int* BubbleSort(int* const& array, const int& size) {
 
 //after a day 6/9/2023
 // success
+//int* BubbleSort(int* const& array, const int& size) {
+//	for (int i = 0; i < size-1; i++) {
+//		for (int j = 0; j < size - 1 - i; j++) {
+//			if (array[j] > array[j + 1]) {
+//				int temp = array[j];
+//				array[j] = array[j + 1];
+//				array[j + 1] = temp;
+//			}
+//		}
+//	}
+//	return array;
+//}
+// 6/21/2023 done!
 int* BubbleSort(int* const& array, const int& size) {
-	for (int i = 0; i < size-1; i++) {
+	for (int i = 0; i < size - 1; i++) {
 		for (int j = 0; j < size - 1 - i; j++) {
-			if (array[j] > array[j + 1]) {
-				int temp = array[j];
-				array[j] = array[j + 1];
-				array[j + 1] = temp;
-			}
+			if (array[j] > array[j + 1])
+				std::swap(array[j], array[j + 1]);
 		}
 	}
 	return array;

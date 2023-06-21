@@ -50,11 +50,19 @@ int* InsertionSort(int* const& array, const int& size) {
 }
 */
 // 6/11/2023
-int* InsertionSort(int* const& array, const int size) {
-	for (int i = 0; i < size; i++) {
-		for (int j = i; j >= 0 && array[j] > array[j + 1]; j--) {
-			std::swap(array[j], array[j + 1]);
-		}
+//int* InsertionSort(int* const& array, const int size) {
+//	for (int i = 0; i < size; i++) {
+//		for (int j = i; j >= 0 && array[j] > array[j + 1]; j--) {
+//			std::swap(array[j], array[j + 1]);
+//		}
+//	}
+//	return array;
+//}
+
+int* InsertionSort(int* const& array, const int& size) {
+	for (int i = 0; i < size - 1; i++) {
+		for (int j = i; j >= 0 && array[j] > array[j+1]; j--)
+			std::swap(array[j + 1], array[j]);
 	}
 	return array;
 }
